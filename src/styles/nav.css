@@ -1,0 +1,26 @@
+.nav {
+  padding: 24px 0;
+}
+
+.nav__inner {
+  width: min(var(--maxw), calc(100% - var(--gutter)));
+  margin: 0 auto;
+}
+
+.nav__links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 16px;
+  text-transform: none;
+}
+
+.nav__link {
+  color: var(--text-primary);
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.nav__link:hover {
+  color: var(--text-link);
+}

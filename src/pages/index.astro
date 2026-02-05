@@ -1,11 +1,43 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/index.css';
+import avatar from '../assets/pixel_avatar.png';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Tem Taepaisitphongse">
+  <Fragment slot="header">
+    <Navigation />
+  </Fragment>
+
+  <div class="wrapper">
+    <section class="content">
+      <div class="content__image">
+        <img src={avatar.src} alt="Avatar" />
+      </div>
+      <div class="content__text">
+        <h1 class="title">Hi, I'm Tem!</h1>
+        <h4 class="subtitle">Prev. Solutions Architect Intern @ Accenture</h4>
+  
+        <div class="intro">
+          <p>〽️ junior studying CS at the University of Michigan</p>
+          <p>
+            📄 get a
+            <a href="../assets/Tem_Taepaisitphongse_resume.pdf" target="_blank" rel="noreferrer">copy</a> of my resume
+          </p>
+          <p>
+            👾 heard there might be more code <a href="https://github.com/temttae" target="_blank" rel="noreferrer">here</a>
+          </p>
+          <p>
+            🤝🏻 let's <a href="https://www.linkedin.com/in/temtae/" target="_blank" rel="noreferrer">connect!</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <Fragment slot="footer">
+    <Footer />
+  </Fragment>
 </Layout>

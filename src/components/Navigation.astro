@@ -1,0 +1,18 @@
+---
+import '../styles/nav.css';
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/work", label: "Work" },
+];
+---
+
+<header class="nav">
+  <div class="nav__inner">
+    <nav class="nav__links" aria-label="Navigation links">
+      {links.map((l) => (
+        <a class="nav__link" href={l.href}>{l.label}</a>
+      ))}
+    </nav>
+  </div>
+</header>
