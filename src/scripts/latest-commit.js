@@ -9,7 +9,7 @@ export const fetchCommit = async () => {
     if (currTime - Number(cachedTime) < oneDay) {
       const cachedDate = localStorage.getItem("latestCommitDate");
       if (cachedDate) {
-        document.getElementById("commit-date").textContent = cachedDate;
+        document.getElementById("commit-date").textContent = "Updated at " + cachedDate;
         return;
       }
     }
