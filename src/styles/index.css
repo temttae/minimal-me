@@ -14,11 +14,12 @@
 
 .content {
   width: 100%;
-  padding-top: 16px;
+  padding: 16px 24px;
   display: grid;
-  grid-template-columns: 128px 1fr;
+  grid-template-columns: 224px 1fr;
   gap: 24px;
   align-items: end;
+  box-sizing: border-box;
 }
 
 .content__image {
@@ -28,7 +29,8 @@
 }
 
 .content__image img {
-  width: 224px;
+  width: 100%;
+  max-width: 224px;
   height: auto;
   display: block;
   image-rendering: pixelated;
@@ -81,9 +83,9 @@
 
 @media (max-width: 1280px) {
   .content {
+    padding: 16px 24px;
     display: grid;
     grid-template-columns: 1fr auto;
-    /* grid-template-rows: auto auto; */
     column-gap: 16px;
     row-gap: 24px;
     align-items: end;
