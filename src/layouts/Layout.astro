@@ -1,5 +1,7 @@
 ---
 const { title = "Tem Taepaisitphongse" } = Astro.props;
+
+import '../styles/global.css';
 ---
 
 <!doctype html>
@@ -17,7 +19,6 @@ const { title = "Tem Taepaisitphongse" } = Astro.props;
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="/src/styles/global.css" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
