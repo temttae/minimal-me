@@ -1,0 +1,17 @@
+---
+const { placement = "top" } = Astro.props;
+
+import '../styles/tooltip.css';
+---
+
+<span class="tt" data-tt data-place={placement} data-pad={8}>
+  <span class="tt__trigger" tabindex="0">
+    <slot />
+  </span>
+
+  <div class="tt__panel" role="tooltip" aria-hidden="true">
+    <slot name="content" />
+  </div>
+</span>
+
+<script type="module" src="/src/scripts/tooltip.js"></script>

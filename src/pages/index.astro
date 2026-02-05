@@ -2,8 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import Navigation from '../components/Navigation.astro';
 import Footer from '../components/Footer.astro';
-import '../styles/index.css';
+import Tooltip from '../components/Tooltip.astro';
+
 import avatar from '../assets/pixel_avatar.png';
+
+import '../styles/index.css';
 ---
 
 <Layout title="Tem Taepaisitphongse">
@@ -16,22 +19,58 @@ import avatar from '../assets/pixel_avatar.png';
       <div class="content__image">
         <img src={avatar.src} alt="Avatar" />
       </div>
+
       <div class="content__text">
-        <h1 class="title">Hi, I'm Tem!</h1>
-        <h4 class="subtitle">Prev. Solutions Architect Intern @ Accenture</h4>
-  
+        <div class="header">
+          <h1 class="title">
+            Hi, I'm 
+            <Tooltip placement="top">
+              <span>Tem!</span>
+              <Fragment slot="content">
+                <p>In Thai, my name is written as เต็ม.</p>
+              </Fragment>
+            </Tooltip>
+          </h1>
+          <h4 class="subtitle">Prev. Solutions Architect Intern @ Accenture</h4>
+        </div>
+
         <div class="intro">
-          <p>〽️ junior studying CS at the University of Michigan</p>
-          <p>
-            📄 get a
-            <a href="src/assets/Tem_Taepaisitphongse_resume.pdf" target="_blank" rel="noreferrer">copy</a> of my resume
-          </p>
-          <p>
-            👾 heard there might be more code <a href="https://github.com/temttae" target="_blank" rel="noreferrer">here</a>
-          </p>
-          <p>
-            🤝🏻 let's <a href="https://www.linkedin.com/in/temtae/" target="_blank" rel="noreferrer">connect!</a>
-          </p>
+          <div>
+            <span style="margin-right: 4px;">〽️</span>
+            <span>junior studying CS at the 
+              <Tooltip placement="right">
+                <span>University of Michigan</span>
+                <Fragment slot="content">
+                  <p>I'm an analyst for Atlas Digital and the president of the Thai Student Association!</p>
+                </Fragment>
+              </Tooltip>
+            </span>
+          </div>
+
+          <div>
+            <span style="margin-right: 4px;">📄</span>
+            <span>
+              get a
+              <a href="/Tem_Taepaisitphongse_resume.pdf" target="_blank" rel="noreferrer">copy</a>
+              of my resume
+            </span>
+          </div>
+
+          <div>
+            <span style="margin-right: 4px;">👾</span>
+            <span>
+              heard there might be more code
+              <a href="https://github.com/temttae" target="_blank" rel="noreferrer">here</a>
+            </span>
+          </div>
+
+          <div>
+            <span style="margin-right: 4px;">🤝🏻</span>
+            <span>
+              let's
+              <a href="https://www.linkedin.com/in/temtae/" target="_blank" rel="noreferrer">connect!</a>
+            </span>
+          </div>
         </div>
       </div>
     </section>

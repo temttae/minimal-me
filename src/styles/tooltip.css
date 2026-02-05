@@ -1,0 +1,83 @@
+.tt {
+  position: relative;
+  display: inline-flex;
+  vertical-align: baseline;
+}
+
+.tt__trigger {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+  cursor: default;
+}
+
+.tt__panel {
+  position: absolute;
+  z-index: 999;
+
+  min-width: 200px;
+  max-width: min(280px, calc(100vw - 24px));
+
+  padding: 10px 12px;
+  border-radius: 12px;
+
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  --dx: 0px;
+  --dy: 0px;
+
+  transition: opacity 140ms ease, transform 140ms ease;
+}
+
+.tt:hover .tt__panel,
+.tt:focus-within .tt__panel {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.tt[data-place="top"] .tt__panel {
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px) translate(var(--dx), var(--dy));
+}
+
+.tt[data-place="bottom"] .tt__panel {
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%) translateY(10px) translate(var(--dx), var(--dy));
+}
+
+.tt[data-place="left"] .tt__panel {
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%) translateX(-10px) translate(var(--dx), var(--dy));
+}
+
+.tt[data-place="right"] .tt__panel {
+  left: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%) translateX(10px) translate(var(--dx), var(--dy));
+}
+
+.tt__panel p {
+  margin: 6px 0 0;
+  color: var(--text-secondary);
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.tt__panel img {
+  margin-top: 10px;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
