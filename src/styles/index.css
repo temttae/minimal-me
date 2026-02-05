@@ -68,16 +68,40 @@
 
 @media (max-width: 640px) {
   .content {
-    display: flex;
-    flex-direction: row-reverse;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
+    column-gap: 16px;
+    row-gap: 12px;
+    align-items: end;
+  }
+
+  .content__text {
+    display: contents;
+  }
+
+  .title {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .subtitle {
+    grid-column: 1;
+    grid-row: 2;
   }
 
   .content__image {
-    justify-content: flex-start;
+    grid-column: 2;
+    grid-row: 1 / span 2;
   }
 
   .content__image img {
-    width: 64px;
-    justify-content: flex-start;
+    width: 128px;
+    height: auto;
+  }
+
+  .intro {
+    grid-column: 1 / -1;
+    grid-row: 3;
   }
 }

@@ -39,7 +39,7 @@ export const fetchCommit = async () => {
       );
       localStorage.setItem("latestCommitCached", "true");
      
-      document.getElementById("commit-date").textContent = "Updated on " + cDate;
+      document.getElementById("commit-date").textContent = "Updated at " + cDate;
     } else {
       document.getElementById("commit-date").textContent = "";
     }
