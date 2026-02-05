@@ -22,5 +22,9 @@
 }
 
 .nav__link:hover {
+  cursor: pointer;
+}
+
+.nav__link-noncurrent:hover {
   color: var(--text-link);
 }

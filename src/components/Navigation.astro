@@ -1,6 +1,7 @@
 ---
 import '../styles/nav.css';
 
+const pathname = Astro.url.pathname;
 const links = [
   { href: "/", label: "Home" },
   { href: "/work", label: "Work" },
@@ -9,10 +10,14 @@ const links = [
 
 <header class="nav">
   <div class="nav__inner">
-    <nav class="nav__links" aria-label="Navigation links">
-      {links.map((l) => (
-        <a class="nav__link" href={l.href}>{l.label}</a>
-      ))}
+    <nav class="nav__links">
+      {links.map((l) =>
+        pathname === l.href ? (
+          <span class="nav__link">{l.label}</span>
+        ) : (
+          <a class="nav__link nav__link-noncurrent" href={l.href}>{l.label}</a>
+        )
+      )}
     </nav>
   </div>
 </header>
