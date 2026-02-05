@@ -1,0 +1,23 @@
+---
+import { ClientRouter } from 'astro:transitions';
+import '../styles/global.css';
+import '../styles/404.css';
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>404</title>
+    <ClientRouter />
+  </head>
+  <body>
+    <div class="error">
+      <span class="message">
+        <a href="/">Lost? Go back to /</a>
+      </span>
+    </div>
+  </body>
+</html>

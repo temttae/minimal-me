@@ -1,0 +1,17 @@
+a {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.error {
+  min-height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message {
+  background-color: var(--bg-secondary);
+  padding: 16px;
+  border-radius: 4px;
+}
